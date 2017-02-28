@@ -1,0 +1,19 @@
+{
+  "name": "ricebook",
+  "version": "0.0.1",
+  "description": "yale918 own facebook similar app",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --watch ./ server.js",
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yale918/riceBook.git"
+  },
+  "author": "yale918",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yale918/riceBook/issues"
+  }
+}
