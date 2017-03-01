@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title> riceBook </title>
 	<style type="text/css">
 		.btn{
@@ -18,8 +19,8 @@
 	<div style="background-color:#28457F;width:680px;padding-top:10px;padding-bottom:10px;">
 
 		<div style="width:660px;margin-left:20px;">
-			<input class="btn" type="button" value="Y" style = "opacity:0.6;"">
-			<input class="btn" type="text" id="find" value="搜尋人、地點和事物" style="color:black;">
+			<input class="btn" type="button" value="Y" style = "opacity:0.6;">
+			<input id="search"class="btn" type="text" id="find" value="搜尋人、地點和事物" style="color:black;">
 			<input type="button" style="background-color:transparent;border:0;width:100px;">
 			<input class="btn" type="button" value="徐釧庭" style="font-size:10px;background-color:transparent; border:0;">
 			<input class="btn" type="button" value="首頁" style="font-size:10px;background-color:transparent;border:0;">
@@ -33,12 +34,30 @@
 	</div>
 
 	<div>
-		<div style="background-color:transparent;float:left;width:150px;height:700px;float:left;margin-left:10px;margin-top:5px;"></div>
-		<div style="background-color:#FFFFFF;float:left;width:350px;height:700px;float:left;margin-left:5px;margin-top:5px;"></div>
-		<div style="background-color:#FFFFFF;float:left;width:150px;height:700px;float:left;margin-left:5px;margin-right:10px;margin-top:5px;"></div>
+		<div id="left"		style="background-color:transparent;float:left;width:150px;height:700px;float:left;margin-left:10px;margin-top:5px;">
+			<input id="select" type="button" value="select"/>
+		</div>
+		<div id="middle"	style="background-color:#FFFFFF;float:left;width:350px;height:700px;float:left;margin-left:5px;margin-top:5px;"></div>
+		<div id="right"		style="background-color:#FFFFFF;float:left;width:150px;height:700px;float:left;margin-left:5px;margin-right:10px;margin-top:5px;"></div>
 	</div>
-	
+
 </div>
+
+<script>
+
+		document.getElementById('search').addEventListener('click',function(e){
+					document.getElementById('search').value = "";
+					console.log("search is clicked");
+		});
+		document.getElementById('select').addEventListener('click',function(e){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST","MYSQL",true);
+			xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			xhttp.send("op=select&data=none");
+			console.log("select request sended")
+		});
+</script>
+
 
 
 
